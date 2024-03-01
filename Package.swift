@@ -4,6 +4,9 @@ import PackageDescription
 
 let package = Package(
   name: "tripadvisor-swift",
+  platforms: [
+    .iOS(.v16),
+  ],
   products: [
     .library(
       name: "TripadvisorKit",
