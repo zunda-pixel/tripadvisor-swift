@@ -1,7 +1,7 @@
 import Foundation
 import HTTPTypes
 
-public struct LocationSearchRequest: Request {
+public struct SearchLocationRequest: Request {
   public var apiKey: String
   public var baseURL: URL = BASE_URL
   public var path: String = "\(API_VERSION_PATH)/location/search"
@@ -21,24 +21,48 @@ public struct LocationSearchRequest: Request {
       .init(name: "key", value: apiKey),
       .init(name: "searchQuery", value: searchQuery),
     ]
-    
+
     category.map { queries.append(.init(name: "category", value: $0.rawValue)) }
     phoneNumber.map { queries.append(.init(name: "phone", value: $0)) }
     address.map { queries.append(.init(name: "address", value: $0)) }
     point.map { queries.append(.init(name: "latLong", value: "\($0.x),\($0.y)")) }
     language.map { queries.append(.init(name: "language", value: $0.rawValue)) }
-    
+
     return queries
   }
-  
+
   public var headers: HTTPFields {
     var headers: HTTPFields = [
-      .accept: "application/json",
+      .accept: "application/json"
     ]
-    
+
     referer.map { headers[.referer] = $0.absoluteString }
     origin.map { headers[.origin] = $0.absoluteString }
-    
+
     return headers
+  }
+
+  public init(
+    apiKey: String,
+    searchQuery: String,
+    referer: URL? = nil,
+    origin: URL? = nil,
+    category: Category? = nil,
+    phoneNumber: String? = nil,
+    address: String? = nil,
+    point: CGPoint? = nil,
+    radius: Radius? = nil,
+    language: Language? = .en
+  ) {
+    self.apiKey = apiKey
+    self.searchQuery = searchQuery
+    self.referer = referer
+    self.origin = origin
+    self.category = category
+    self.phoneNumber = phoneNumber
+    self.address = address
+    self.point = point
+    self.radius = radius
+    self.language = language
   }
 }
