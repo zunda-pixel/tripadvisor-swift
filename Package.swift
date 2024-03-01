@@ -10,9 +10,17 @@ let package = Package(
       targets: ["TripadvisorKit"]
     ),
   ],
+  dependencies: [
+    .package(url: "https://github.com/apple/swift-format", from: "509.0.0"),
+    .package(url: "https://github.com/apple/swift-http-types", from: "1.0.3"),
+  ],
   targets: [
     .target(
-      name: "TripadvisorKit"
+      name: "TripadvisorKit",
+      dependencies: [
+        .product(name: "HTTPTypes", package: "swift-http-types"),
+        .product(name: "HTTPTypesFoundation", package: "swift-http-types"),
+      ]
     ),
     .testTarget(
       name: "TripadvisorKitTests",
