@@ -1,31 +1,29 @@
 import Foundation
 import HTTPTypes
 
-public struct SearchLocationRequest: Request {
+public struct SearchNearLocationsRequest: Request {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL
-  public var path: String = "\(Constants.apiVersionPath)/location/search"
+  public var path: String = "\(Constants.apiVersionPath)/location/nearby_search"
   public var method: HTTPRequest.Method = .get
-  public var searchQuery: String
+  public var point: Location.Point
   public var referer: URL?
   public var origin: URL?
   public var category: Category?
   public var phoneNumber: String?
   public var address: String?
-  public var point: Location.Point?
   public var radius: Radius?
   public var language: Language?
 
   public var queries: [URLQueryItem] {
     var queries: [URLQueryItem] = [
       .init(name: "key", value: apiKey),
-      .init(name: "searchQuery", value: searchQuery),
+      .init(name: "latLong", value: "\(point.latitude),\(point.longitude)"),
     ]
 
     category.map { queries.append(.init(name: "category", value: $0.rawValue)) }
     phoneNumber.map { queries.append(.init(name: "phone", value: $0)) }
     address.map { queries.append(.init(name: "address", value: $0)) }
-    point.map { queries.append(.init(name: "latLong", value: "\($0.latitude),\($0.longitude)")) }
     language.map { queries.append(.init(name: "language", value: $0.rawValue)) }
 
     return queries
@@ -44,18 +42,16 @@ public struct SearchLocationRequest: Request {
 
   public init(
     apiKey: String,
-    searchQuery: String,
+    point: Location.Point,
     referer: URL? = nil,
     origin: URL? = nil,
     category: Category? = nil,
     phoneNumber: String? = nil,
     address: String? = nil,
-    point: Location.Point? = nil,
     radius: Radius? = nil,
     language: Language? = .en
   ) {
     self.apiKey = apiKey
-    self.searchQuery = searchQuery
     self.referer = referer
     self.origin = origin
     self.category = category

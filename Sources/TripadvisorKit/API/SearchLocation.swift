@@ -1,7 +1,7 @@
 import Foundation
 
 extension TripadvisorAPI {
-  public func searchLocation(
+  public func searchLocations(
     query: String,
     category: Category? = nil,
     phoneNumber: String? = nil,
@@ -9,7 +9,7 @@ extension TripadvisorAPI {
     point: Location.Point? = nil,
     radius: Radius? = nil
   ) async throws -> [Location] {
-    let request = SearchLocationRequest(
+    let request = SearchLocationsRequest(
       apiKey: apiKey,
       searchQuery: query,
       referer: referer,

@@ -11,7 +11,7 @@ final class TripadvisorKitTests: XCTestCase {
 
   func testSearchLocation() async throws {
     let query = "海老丸らーめん"
-    let locations = try await api.searchLocation(query: query)
+    let locations = try await api.searchLocations(query: query)
     let location = locations.first!
     XCTAssertEqual(location.id, "15654717")
     XCTAssertEqual(location.name, "海老丸 らーめん")
@@ -25,8 +25,8 @@ final class TripadvisorKitTests: XCTestCase {
   }
   
   func testSearchNearLocation() async throws {
-    let point = LocationPoint(latitude: 35.652832, longitude: 139.839478)
-    let locations = try await api.searchNearLocation(point: point)
+    let point = Location.Point(latitude: 35.652832, longitude: 139.839478)
+    let locations = try await api.searchNearLocations(point: point)
     let location = locations.first!
     XCTAssertEqual(location.id, "14746542")
     XCTAssertEqual(location.name, "ビアンモール")

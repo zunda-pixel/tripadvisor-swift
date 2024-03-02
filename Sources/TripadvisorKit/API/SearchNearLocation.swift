@@ -1,14 +1,14 @@
 import Foundation
 
 extension TripadvisorAPI {
-  public func searchNearLocation(
+  public func searchNearLocations(
     point: Location.Point,
     category: Category? = nil,
     phoneNumber: String? = nil,
     address: String? = nil,
     radius: Radius? = nil
   ) async throws -> [Location] {
-    let request = SearchNearLocationRequest(
+    let request = SearchNearLocationsRequest(
       apiKey: apiKey,
       point: point,
       referer: referer,
