@@ -15,7 +15,7 @@ public struct LocationReviewsRequest: Request {
 
   public var queries: [URLQueryItem] {
     var queries: [URLQueryItem] = [
-      .init(name: "key", value: apiKey),
+      .init(name: "key", value: apiKey)
     ]
 
     language.map { queries.append(.init(name: "language", value: $0.rawValue)) }
@@ -35,7 +35,7 @@ public struct LocationReviewsRequest: Request {
 
     return headers
   }
-  
+
   public init(
     apiKey: String,
     locationId: Location.ID,

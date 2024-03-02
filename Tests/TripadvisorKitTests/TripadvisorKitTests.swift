@@ -23,7 +23,7 @@ final class TripadvisorKitTests: XCTestCase {
     XCTAssertEqual(location.address.postalCode, "〒101-0065")
     XCTAssertEqual(location.address.addressString, "〒101-0065 東京都 千代田区 西神田2-1-13 十勝ビル1F")
   }
-  
+
   func testSearchNearLocation() async throws {
     let point = Location.Point(latitude: 35.652832, longitude: 139.839478)
     let locations = try await api.searchNearLocations(point: point)

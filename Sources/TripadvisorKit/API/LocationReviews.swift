@@ -18,7 +18,7 @@ extension TripadvisorAPI {
     )
 
     let (data, _) = try await session.data(for: request)
-    
+
     let response = try JSONDecoder.tripadvisor.decode(ReviewsResponse.self, from: data)
 
     return response.reviews
