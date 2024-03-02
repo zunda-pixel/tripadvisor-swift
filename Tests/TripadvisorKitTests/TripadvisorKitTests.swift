@@ -38,4 +38,10 @@ final class TripadvisorKitTests: XCTestCase {
     XCTAssertEqual(location.address.postalCode, "〒134-0086")
     XCTAssertEqual(location.address.addressString, "〒134-0086 東京都 江戸川区 臨海町1-4-2 東京臨海病院")
   }
+
+  func testLocationReviews() async throws {
+    let locationId: Location.ID = "15654717"
+    let reviews = try await api.locationReviews(locationId: locationId)
+    XCTAssertTrue(reviews.map(\.locationId).allSatisfy { $0 == Int(locationId.rawValue)! })
+  }
 }
