@@ -25,7 +25,7 @@ extension Request {
 }
 
 extension URLSession {
-  public func data(for request: some Request) async throws -> (Data, HTTPResponse) {
+  func data(for request: some Request) async throws -> (Data, HTTPResponse) {
     let request = HTTPRequest(
       method: request.method,
       url: request.url,
