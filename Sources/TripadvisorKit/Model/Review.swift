@@ -4,7 +4,7 @@ import Tagged
 public struct Review: Codable, Identifiable {
   public var id: Tagged<Review, Int>
   public var lang: Language
-  public var locationId: Location.ID
+  public var locationId: Int //TODO Location.ID
   public var publishedDate: Date
   public var rating: Int
   public var helpfulVotes: Int
@@ -14,6 +14,7 @@ public struct Review: Codable, Identifiable {
   public var title: String
   public var tripType: String
   public var travelDate: Date
+  public var user: User
   
   private enum CodingKeys: String, CodingKey {
     case id
@@ -28,5 +29,6 @@ public struct Review: Codable, Identifiable {
     case title
     case tripType = "trip_type"
     case travelDate = "travel_date"
+    case user
   }
 }
