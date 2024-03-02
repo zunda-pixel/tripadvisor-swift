@@ -1,9 +1,10 @@
 import Foundation
-#if canImport(FoundationNetworking)
-import FoundationNetworking
-#endif
 import HTTPTypes
 import HTTPTypesFoundation
+
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
 
 public protocol Request {
   var baseURL: URL { get }
