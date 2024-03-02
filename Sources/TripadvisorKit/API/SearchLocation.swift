@@ -6,7 +6,7 @@ extension TripadvisorAPI {
     category: Category? = nil,
     phoneNumber: String? = nil,
     address: String? = nil,
-    point: CGPoint? = nil,
+    point: Location.Point? = nil,
     radius: Radius? = nil
   ) async throws -> [Location] {
     let request = SearchLocationRequest(

@@ -4,7 +4,7 @@ public struct Address: Codable {
   public var city: String
   public var state: String?
   public var country: String
-  public var postalCode: String
+  public var postalCode: String?
   public var addressString: String
 
   private enum CodingKeys: String, CodingKey {

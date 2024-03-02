@@ -12,7 +12,7 @@ public struct SearchLocationRequest: Request {
   public var category: Category?
   public var phoneNumber: String?
   public var address: String?
-  public var point: CGPoint?
+  public var point: Location.Point?
   public var radius: Radius?
   public var language: Language?
 
@@ -25,7 +25,7 @@ public struct SearchLocationRequest: Request {
     category.map { queries.append(.init(name: "category", value: $0.rawValue)) }
     phoneNumber.map { queries.append(.init(name: "phone", value: $0)) }
     address.map { queries.append(.init(name: "address", value: $0)) }
-    point.map { queries.append(.init(name: "latLong", value: "\($0.x),\($0.y)")) }
+    point.map { queries.append(.init(name: "latLong", value: "\($0.latitude),\($0.longitude)")) }
     language.map { queries.append(.init(name: "language", value: $0.rawValue)) }
 
     return queries
@@ -50,7 +50,7 @@ public struct SearchLocationRequest: Request {
     category: Category? = nil,
     phoneNumber: String? = nil,
     address: String? = nil,
-    point: CGPoint? = nil,
+    point: Location.Point? = nil,
     radius: Radius? = nil,
     language: Language? = .en
   ) {
