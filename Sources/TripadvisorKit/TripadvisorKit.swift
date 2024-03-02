@@ -1,4 +1,23 @@
 import Foundation
 
-public let BASE_URL = URL(string: "https://api.content.tripadvisor.com")!
-public let API_VERSION_PATH = "/api/v1"
+public struct TripadvisorAPI {
+  public var apiKey: String
+  public var language: Language
+  public var session: URLSession
+  public var referer: URL?
+  public var origin: URL?
+
+  public init(
+    apiKey: String,
+    language: Language = .en,
+    session: URLSession = .shared,
+    referer: URL? = nil,
+    origin: URL? = nil
+  ) {
+    self.apiKey = apiKey
+    self.referer = referer
+    self.origin = origin
+    self.language = language
+    self.session = session
+  }
+}
