@@ -1,4 +1,4 @@
-public enum Language: String {
+public enum Language: String, Codable {
   case en
   case ja
 }
