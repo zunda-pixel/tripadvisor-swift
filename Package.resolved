@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "swift-currency",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zunda-pixel/swift-currency",
+      "state" : {
+        "revision" : "476562c17ec5ed2d96794f13a24df86eb7bf96b5",
+        "version" : "0.0.1"
+      }
+    },
+    {
       "identity" : "swift-format",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-format",

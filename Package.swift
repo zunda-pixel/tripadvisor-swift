@@ -18,6 +18,7 @@ let package = Package(
     .package(url: "https://github.com/apple/swift-format", from: "509.0.0"),
     .package(url: "https://github.com/apple/swift-http-types", from: "1.0.3"),
     .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.1.0"),
+    .package(url: "https://github.com/zunda-pixel/swift-currency", from: "0.0.1"),
   ],
   targets: [
     .target(
@@ -26,6 +27,7 @@ let package = Package(
         .product(name: "HTTPTypes", package: "swift-http-types"),
         .product(name: "HTTPTypesFoundation", package: "swift-http-types"),
         .product(name: "Tagged", package: "swift-tagged"),
+        .product(name: "Currency", package: "swift-currency"),
       ]
     ),
     .testTarget(
