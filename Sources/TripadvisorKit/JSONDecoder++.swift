@@ -9,10 +9,15 @@ extension JSONDecoder {
       if let date = formatter.date(from: string) {
         return date
       } else {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter.date(from: string)!
+        formatter.formatOptions.insert(.withFractionalSeconds)
+        if let date = formatter.date(from: string) {
+          return date
+        } else {
+          let formatter = DateFormatter()
+          formatter.dateStyle = .short
+          formatter.timeStyle = .none
+          return formatter.date(from: string)!
+        }
       }
     }
     return decoder
