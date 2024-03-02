@@ -3,8 +3,8 @@ import HTTPTypes
 
 public struct SearchLocationRequest: Request {
   public var apiKey: String
-  public var baseURL: URL = BASE_URL
-  public var path: String = "\(API_VERSION_PATH)/location/search"
+  public var baseURL: URL = Constants.baseURL
+  public var path: String = "\(Constants.apiVersionPath)/location/search"
   public var method: HTTPRequest.Method = .get
   public var searchQuery: String
   public var referer: URL?

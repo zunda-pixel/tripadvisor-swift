@@ -2,6 +2,10 @@ import Foundation
 import HTTPTypes
 import HTTPTypesFoundation
 
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
+
 public protocol Request {
   var baseURL: URL { get }
   var path: String { get }
@@ -13,7 +17,7 @@ public protocol Request {
 
 extension Request {
   public var url: URL {
-    let url = baseURL.appending(path: path)
+    let url = baseURL.appendingPathComponent(path)
     var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
     components.queryItems = queries
     return components.url!

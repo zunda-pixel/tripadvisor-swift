@@ -1,5 +1,9 @@
 import Foundation
 
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
+
 public struct TripadvisorAPI {
   public var apiKey: String
   public var language: Language
