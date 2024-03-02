@@ -17,7 +17,7 @@ public protocol Request {
 
 extension Request {
   public var url: URL {
-    let url = baseURL.appending(path: path)
+    let url = baseURL.appendingPathComponent(path)
     var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
     components.queryItems = queries
     return components.url!
