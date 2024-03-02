@@ -1,5 +1,7 @@
-public struct Location: Codable {
-  public var id: String
+import Tagged
+
+public struct Location: Codable, Identifiable {
+  public var id: Tagged<Location, String>
   public var name: String
   public var address: Address
 
