@@ -1,5 +1,5 @@
-import Tagged
 import Foundation
+import Tagged
 
 public struct Location: Codable, Identifiable {
   public var id: Tagged<Location, String>
@@ -29,7 +29,7 @@ public struct Location: Codable, Identifiable {
   public var subCategories: [LabelContent]?
   public var neighborhoods: [Location]?
   public var tripTypes: [LabelContent]?
-  
+
   private enum CodingKeys: String, CodingKey {
     case id = "location_id"
     case name
@@ -67,7 +67,7 @@ public struct Ranking: Codable {
   public var geoLocationName: String
   public var rankingOutOf: String
   public var ranking: String
-  
+
   private enum CodingKeys: String, CodingKey {
     case geoLocationId = "geo_location_id"
     case rankingString = "ranking_string"
@@ -80,7 +80,7 @@ public struct Ranking: Codable {
 public struct Period: Codable {
   public var open: Time
   public var close: Time
-  
+
   public struct Time: Codable {
     public var day: Int
     public var time: String
@@ -90,7 +90,7 @@ public struct Period: Codable {
 public struct Hours: Codable {
   public var periods: [Period]
   public var weekdayText: [String]
-  
+
   private enum CodingKeys: String, CodingKey {
     case periods
     case weekdayText = "weekday_text"

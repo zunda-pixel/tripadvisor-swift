@@ -1,6 +1,6 @@
+import Currency
 import Foundation
 import HTTPTypes
-import Currency
 
 public struct LocationDetailRequest: Request {
   public var apiKey: String
@@ -15,7 +15,7 @@ public struct LocationDetailRequest: Request {
 
   public var queries: [URLQueryItem] {
     var queries: [URLQueryItem] = [
-      .init(name: "key", value: apiKey),
+      .init(name: "key", value: apiKey)
     ]
 
     language.map { queries.append(.init(name: "language", value: $0.rawValue)) }

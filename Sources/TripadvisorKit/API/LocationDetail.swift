@@ -1,5 +1,5 @@
-import Foundation
 import Currency
+import Foundation
 
 extension TripadvisorAPI {
   public func locationDetail(
@@ -16,7 +16,7 @@ extension TripadvisorAPI {
     )
 
     let (data, _) = try await session.data(for: request)
-    
+
     let location = try JSONDecoder().decode(Location.self, from: data)
 
     return location

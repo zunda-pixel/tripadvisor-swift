@@ -9,7 +9,7 @@ public struct Photo: Codable {
   public var album: String
   public var source: LabelContent
   public var user: User
-  
+
   private enum CodingKeys: String, CodingKey {
     case id
     case isBlessed = "is_blessed"
