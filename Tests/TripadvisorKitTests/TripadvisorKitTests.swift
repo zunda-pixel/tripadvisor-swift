@@ -15,13 +15,13 @@ final class TripadvisorKitTests: XCTestCase {
     let location = locations.first!
     XCTAssertEqual(location.id, "15654717")
     XCTAssertEqual(location.name, "海老丸 らーめん")
-    XCTAssertEqual(location.address.street1, "西神田2-1-13")
-    XCTAssertEqual(location.address.street2, "十勝ビル1F")
-    XCTAssertEqual(location.address.city, "千代田区")
-    XCTAssertEqual(location.address.state, "東京都")
-    XCTAssertEqual(location.address.country, "日本")
-    XCTAssertEqual(location.address.postalCode, "〒101-0065")
-    XCTAssertEqual(location.address.addressString, "〒101-0065 東京都 千代田区 西神田2-1-13 十勝ビル1F")
+    XCTAssertEqual(location.address?.street1, "西神田2-1-13")
+    XCTAssertEqual(location.address?.street2, "十勝ビル1F")
+    XCTAssertEqual(location.address?.city, "千代田区")
+    XCTAssertEqual(location.address?.state, "東京都")
+    XCTAssertEqual(location.address?.country, "日本")
+    XCTAssertEqual(location.address?.postalCode, "〒101-0065")
+    XCTAssertEqual(location.address?.addressString, "〒101-0065 東京都 千代田区 西神田2-1-13 十勝ビル1F")
   }
 
   func testSearchNearLocation() async throws {
@@ -30,13 +30,13 @@ final class TripadvisorKitTests: XCTestCase {
     let location = locations.first!
     XCTAssertEqual(location.id, "14746542")
     XCTAssertEqual(location.name, "ビアンモール")
-    XCTAssertEqual(location.address.street1, "臨海町1-4-2")
-    XCTAssertEqual(location.address.street2, "東京臨海病院")
-    XCTAssertEqual(location.address.city, "江戸川区")
-    XCTAssertEqual(location.address.state, "東京都")
-    XCTAssertEqual(location.address.country, "日本")
-    XCTAssertEqual(location.address.postalCode, "〒134-0086")
-    XCTAssertEqual(location.address.addressString, "〒134-0086 東京都 江戸川区 臨海町1-4-2 東京臨海病院")
+    XCTAssertEqual(location.address?.street1, "臨海町1-4-2")
+    XCTAssertEqual(location.address?.street2, "東京臨海病院")
+    XCTAssertEqual(location.address?.city, "江戸川区")
+    XCTAssertEqual(location.address?.state, "東京都")
+    XCTAssertEqual(location.address?.country, "日本")
+    XCTAssertEqual(location.address?.postalCode, "〒134-0086")
+    XCTAssertEqual(location.address?.addressString, "〒134-0086 東京都 江戸川区 臨海町1-4-2 東京臨海病院")
   }
 
   func testLocationReviews() async throws {

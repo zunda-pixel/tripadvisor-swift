@@ -7,7 +7,7 @@ public struct Photo: Codable {
   public var publishedDate: Date
   public var image: ImageContent
   public var album: String
-  public var source: PhotoSource
+  public var source: LabelContent
   public var user: User
   
   private enum CodingKeys: String, CodingKey {
