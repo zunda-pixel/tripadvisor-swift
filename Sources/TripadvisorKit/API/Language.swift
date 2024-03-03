@@ -1,4 +1,47 @@
 public enum Language: String, Codable {
+  case ar
+  case zh
+  case zh_TW
+  case da
+  case nl
+  case en_AU
+  case en_CA
+  case en_HK
+  case en_IN
+  case en_IE
+  case en_MY
+  case en_NZ
+  case en_PH
+  case en_SG
+  case en_ZA
+  case en_UK
   case en
+  case fr
+  case fr_BE
+  case fr_CA
+  case fr_CH
+  case de_AT
+  case de
+  case el
+  case iw
+  case `in`
+  case it
+  case it_CH
   case ja
+  case ko
+  case no
+  case pt_PT
+  case pt
+  case ru
+  case es_AR
+  case es_CO
+  case es_MX
+  case es_PE
+  case es
+  case es_VE
+  case es_CL
+  case sv
+  case th
+  case tr
+  case vi
 }
