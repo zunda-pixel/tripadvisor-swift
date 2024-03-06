@@ -4,7 +4,7 @@ import Foundation
   import FoundationNetworking
 #endif
 
-public struct TripadvisorAPI {
+public struct TripadvisorAPI: Sendable, Hashable {
   public var apiKey: String
   public var language: Language
   public var session: URLSession

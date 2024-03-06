@@ -1,4 +1,4 @@
-public struct PhotosResponse: Codable {
+public struct PhotosResponse: Codable, Sendable, Hashable {
   public var photos: [Photo]
 
   private enum CodingKeys: String, CodingKey {

@@ -1,4 +1,4 @@
-public enum Category: String {
+public enum Category: String, Sendable, Hashable, CaseIterable {
   case hotels
   case attractions
   case restaurants

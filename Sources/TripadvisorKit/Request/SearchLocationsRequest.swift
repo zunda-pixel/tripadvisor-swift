@@ -1,7 +1,7 @@
 import Foundation
 import HTTPTypes
 
-public struct SearchLocationsRequest: Request {
+public struct SearchLocationsRequest: Request, Sendable, Hashable {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL
   public var path: String = "\(Constants.apiVersionPath)/location/search"

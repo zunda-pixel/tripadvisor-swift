@@ -1,7 +1,7 @@
 import Foundation
 import Tagged
 
-public struct Review: Codable, Identifiable {
+public struct Review: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Review, Int>
   public var lang: Language
   public var locationId: Int  //TODO Location.ID

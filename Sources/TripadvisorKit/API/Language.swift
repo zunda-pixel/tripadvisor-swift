@@ -1,4 +1,4 @@
-public enum Language: String, Codable {
+public enum Language: String, Codable, Sendable, Hashable, CaseIterable {
   case ar
   case zh
   case zh_TW
