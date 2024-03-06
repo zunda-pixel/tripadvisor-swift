@@ -16,4 +16,22 @@ public struct Address: Codable, Sendable, Hashable {
     case postalCode = "postalcode"
     case addressString = "address_string"
   }
+  
+  public init(
+    street1: String,
+    street2: String,
+    city: String,
+    state: String? = nil,
+    country: String,
+    postalCode: String? = nil,
+    addressString: String
+  ) {
+    self.street1 = street1
+    self.street2 = street2
+    self.city = city
+    self.state = state
+    self.country = country
+    self.postalCode = postalCode
+    self.addressString = addressString
+  }
 }

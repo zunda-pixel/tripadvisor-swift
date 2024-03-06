@@ -8,4 +8,14 @@ public struct LabelContent: Codable, Sendable, Hashable {
     case localizedName = "localized_name"
     case value
   }
+  
+  public init(
+    name: String,
+    localizedName: String,
+    value: String? = nil
+  ) {
+    self.name = name
+    self.localizedName = localizedName
+    self.value = value
+  }
 }

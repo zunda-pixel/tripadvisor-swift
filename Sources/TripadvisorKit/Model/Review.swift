@@ -31,4 +31,34 @@ public struct Review: Codable, Identifiable, Sendable, Hashable {
     case travelDate = "travel_date"
     case user
   }
+  
+  public init(
+    id: Tagged<Review, Int>,
+    lang: Language,
+    locationId: Int,
+    publishedDate: Date,
+    rating: Int,
+    helpfulVotes: Int,
+    ratingImageUrl: URL,
+    url: URL,
+    text: String,
+    title: String,
+    tripType: String,
+    travelDate: Date,
+    user: User
+  ) {
+    self.id = id
+    self.lang = lang
+    self.locationId = locationId
+    self.publishedDate = publishedDate
+    self.rating = rating
+    self.helpfulVotes = helpfulVotes
+    self.ratingImageUrl = ratingImageUrl
+    self.url = url
+    self.text = text
+    self.title = title
+    self.tripType = tripType
+    self.travelDate = travelDate
+    self.user = user
+  }
 }

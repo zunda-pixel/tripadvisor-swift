@@ -20,4 +20,24 @@ public struct Photo: Codable, Sendable, Hashable {
     case source
     case user
   }
+  
+  public init(
+    id: Int,
+    isBlessed: Bool,
+    caption: String,
+    publishedDate: Date,
+    image: ImageContent,
+    album: String,
+    source: LabelContent,
+    user: User
+  ) {
+    self.id = id
+    self.isBlessed = isBlessed
+    self.caption = caption
+    self.publishedDate = publishedDate
+    self.image = image
+    self.album = album
+    self.source = source
+    self.user = user
+  }
 }
