@@ -8,4 +8,14 @@ public struct Ancestor: Codable, Sendable, Hashable {
     case name
     case locationId = "location_id"
   }
+  
+  public init(
+    level: String,
+    name: String,
+    locationId: String
+  ) {
+    self.level = level
+    self.name = name
+    self.locationId = locationId
+  }
 }

@@ -59,40 +59,62 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     case neighborhoods = "neighborhood_info"
     case tripTypes = "trip_types"
   }
-}
-
-public struct Ranking: Codable {
-  public var geoLocationId: String
-  public var rankingString: String
-  public var geoLocationName: String
-  public var rankingOutOf: String
-  public var ranking: String
-
-  private enum CodingKeys: String, CodingKey {
-    case geoLocationId = "geo_location_id"
-    case rankingString = "ranking_string"
-    case geoLocationName = "geo_location_name"
-    case rankingOutOf = "ranking_out_of"
-    case ranking
-  }
-}
-
-public struct Period: Codable {
-  public var open: Time
-  public var close: Time
-
-  public struct Time: Codable {
-    public var day: Int
-    public var time: String
-  }
-}
-
-public struct Hours: Codable {
-  public var periods: [Period]
-  public var weekdayText: [String]
-
-  private enum CodingKeys: String, CodingKey {
-    case periods
-    case weekdayText = "weekday_text"
+  
+  public init(
+    id: Tagged<Location, String>,
+    name: String,
+    description: String? = nil,
+    webURL: URL? = nil,
+    address: Address? = nil,
+    ancestors: [Ancestor]? = nil,
+    latitude: String? = nil,
+    longitude: String? = nil,
+    timezone: String? = nil,
+    phoneNumber: String? = nil,
+    website: URL? = nil,
+    writeReview: URL? = nil,
+    ranking: Ranking? = nil,
+    rating: String? = nil,
+    ratingImageUrl: URL? = nil,
+    reviewCount: String? = nil,
+    reviewRatingCount: [String : String]? = nil,
+    photoCount: String? = nil,
+    seeAllPhotosURL: URL? = nil,
+    priceLevel: String? = nil,
+    hours: Hours? = nil,
+    features: [String]? = nil,
+    cuisines: [LabelContent]? = nil,
+    category: LabelContent? = nil,
+    subCategories: [LabelContent]? = nil,
+    neighborhoods: [Location]? = nil,
+    tripTypes: [LabelContent]? = nil
+  ) {
+    self.id = id
+    self.name = name
+    self.description = description
+    self.webURL = webURL
+    self.address = address
+    self.ancestors = ancestors
+    self.latitude = latitude
+    self.longitude = longitude
+    self.timezone = timezone
+    self.phoneNumber = phoneNumber
+    self.website = website
+    self.writeReview = writeReview
+    self.ranking = ranking
+    self.rating = rating
+    self.ratingImageUrl = ratingImageUrl
+    self.reviewCount = reviewCount
+    self.reviewRatingCount = reviewRatingCount
+    self.photoCount = photoCount
+    self.seeAllPhotosURL = seeAllPhotosURL
+    self.priceLevel = priceLevel
+    self.hours = hours
+    self.features = features
+    self.cuisines = cuisines
+    self.category = category
+    self.subCategories = subCategories
+    self.neighborhoods = neighborhoods
+    self.tripTypes = tripTypes
   }
 }
