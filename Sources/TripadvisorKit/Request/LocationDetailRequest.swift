@@ -2,7 +2,7 @@ import Currency
 import Foundation
 import HTTPTypes
 
-public struct LocationDetailRequest: Request {
+public struct LocationDetailRequest: Request, Sendable, Hashable {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL
   public var locationId: Location.ID

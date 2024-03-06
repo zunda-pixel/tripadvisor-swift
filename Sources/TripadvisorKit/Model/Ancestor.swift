@@ -1,4 +1,4 @@
-public struct Ancestor: Codable {
+public struct Ancestor: Codable, Sendable, Hashable {
   public var level: String
   public var name: String
   public var locationId: String

@@ -1,4 +1,4 @@
-public struct Address: Codable {
+public struct Address: Codable, Sendable, Hashable {
   public var street1: String
   public var street2: String
   public var city: String

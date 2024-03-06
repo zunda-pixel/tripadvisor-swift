@@ -1,7 +1,7 @@
 import Foundation
 import Tagged
 
-public struct Location: Codable, Identifiable {
+public struct Location: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Location, String>
   public var name: String
   public var description: String?

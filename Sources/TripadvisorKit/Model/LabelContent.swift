@@ -1,4 +1,4 @@
-public struct LabelContent: Codable {
+public struct LabelContent: Codable, Sendable, Hashable {
   public var name: String
   public var localizedName: String
   public var value: String?

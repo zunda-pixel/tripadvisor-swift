@@ -1,7 +1,7 @@
 import Foundation
 import HTTPTypes
 
-public struct SearchNearLocationsRequest: Request {
+public struct SearchNearLocationsRequest: Request, Sendable, Hashable {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL
   public var path: String = "\(Constants.apiVersionPath)/location/nearby_search"

@@ -1,4 +1,4 @@
-public struct ReviewsResponse: Codable {
+public struct ReviewsResponse: Codable, Sendable, Hashable {
   public var reviews: [Review]
 
   private enum CodingKeys: String, CodingKey {

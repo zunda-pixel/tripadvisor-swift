@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Photo: Codable {
+public struct Photo: Codable, Sendable, Hashable {
   public var id: Int
   public var isBlessed: Bool
   public var caption: String

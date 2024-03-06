@@ -1,6 +1,6 @@
 import Tagged
 
-public struct User: Codable {
+public struct User: Codable, Sendable, Hashable {
   public var name: String
   public var location: Location?
   public var avatar: Image?
@@ -13,7 +13,7 @@ public struct User: Codable {
 }
 
 extension User {
-  public struct Location: Codable {
+  public struct Location: Codable, Sendable, Hashable {
     public var id: Tagged<Location, String>?
     public var name: String?
   }

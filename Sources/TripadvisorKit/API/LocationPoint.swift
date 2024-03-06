@@ -1,5 +1,5 @@
 extension Location {
-  public struct Point: Codable {
+  public struct Point: Codable, Sendable, Hashable {
     public var latitude: Double
     public var longitude: Double
 
