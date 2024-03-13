@@ -20,7 +20,7 @@ public struct Photo: Codable, Sendable, Hashable {
     case source
     case user
   }
-  
+
   public init(
     id: Int,
     isBlessed: Bool,

@@ -31,7 +31,7 @@ public struct Review: Codable, Identifiable, Sendable, Hashable {
     case travelDate = "travel_date"
     case user
   }
-  
+
   public init(
     id: Tagged<Review, Int>,
     lang: Language,

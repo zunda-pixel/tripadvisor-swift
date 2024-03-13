@@ -59,7 +59,7 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     case neighborhoods = "neighborhood_info"
     case tripTypes = "trip_types"
   }
-  
+
   public init(
     id: Tagged<Location, String>,
     name: String,
@@ -77,7 +77,7 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     rating: String? = nil,
     ratingImageUrl: URL? = nil,
     reviewCount: String? = nil,
-    reviewRatingCount: [String : String]? = nil,
+    reviewRatingCount: [String: String]? = nil,
     photoCount: String? = nil,
     seeAllPhotosURL: URL? = nil,
     priceLevel: String? = nil,

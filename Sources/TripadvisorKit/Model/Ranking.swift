@@ -12,7 +12,7 @@ public struct Ranking: Codable, Sendable, Hashable {
     case rankingOutOf = "ranking_out_of"
     case ranking
   }
-  
+
   public init(
     geoLocationId: String,
     rankingString: String,
