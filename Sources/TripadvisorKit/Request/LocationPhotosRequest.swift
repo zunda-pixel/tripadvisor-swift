@@ -1,6 +1,10 @@
 import Foundation
 import HTTPTypes
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 public struct LocationPhotosRequest: Request, Sendable, Hashable {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL

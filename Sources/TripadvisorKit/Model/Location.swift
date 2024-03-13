@@ -1,6 +1,10 @@
 import Foundation
 import Tagged
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 public struct Location: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Location, String>
   public var name: String

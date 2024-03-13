@@ -1,6 +1,10 @@
 import Foundation
 import Tagged
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 public struct Review: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Review, Int>
   public var lang: Language

@@ -2,6 +2,10 @@ import Currency
 import Foundation
 import HTTPTypes
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 public struct LocationDetailRequest: Request, Sendable, Hashable {
   public var apiKey: String
   public var baseURL: URL = Constants.baseURL

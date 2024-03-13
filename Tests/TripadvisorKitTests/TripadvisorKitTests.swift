@@ -2,6 +2,10 @@ import XCTest
 
 @testable import TripadvisorKit
 
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
+
 final class TripadvisorKitTests: XCTestCase {
   let api = TripadvisorAPI(
     apiKey: ProcessInfo.processInfo.environment["API_KEY"]!,
