@@ -13,22 +13,24 @@ let locations = try await api.searchLocations(query: query)
 print(locations)
 ```
 
-```log
+```json
 [
-    TripadvisorKit.Location(
-        id: 1061568,
-        name: "Giolitti",
+    Location(
+        id: 13331376, 
+        name: "Apple Park Visitor Center", 
         description: nil, 
         webURL: nil, 
-        address: Optional(TripadvisorKit.Address(
-            street1: "Via Degli Uffici del Vicario 40", street2: Optional("A pochi passi dal Pantheon"), city: "Rome", 
-            state: nil, 
-            country: "Italy", 
-            postalCode: Optional("00144"), 
-            addressString: "Via Degli Uffici del Vicario 40 A pochi passi dal Pantheon, 00144 Rome Italy"
-        )),
+        address: Address(
+            street1: "10600 N Tantau Ave",
+            street2: nil,
+            city: "Cupertino",
+            state: "California",
+            country: "United States",
+            postalCode: "95014-0739",
+            addressString: "10600 N Tantau Ave, Cupertino, CA 95014-0739"
+        ),
         ancestors: nil,,,
-    ),
+    )
 ]
 ```
 
@@ -42,20 +44,20 @@ let locations = try await api.searchNearLocations(point: point)
 ## Get Location Review
 
 ```swift
-let locationId: Location.ID = "15654717"
-let reviews = try await api.locationReviews(locationId: locationId)
+let locationId: Location.ID = "13331376"
+let reviews = try await api.locationReviews(id: locationId)
 ```
 
 ## Get Loaction Photos
 
 ```swift
-let locationId: Location.ID = "15654717"
-let photos = try await api.locationPhotos(locationId: locationId)
+let locationId: Location.ID = "13331376"
+let photos = try await api.locationPhotos(id: locationId)
 ```
 
 ## Get Loaction Detail
 
 ```swift
-let locationId: Location.ID = "15654717"
-let location = try await api.locationDetail(locationId: locationId)
+let locationId: Location.ID = "13331376"
+let location = try await api.locationDetail(id: locationId)
 ```
