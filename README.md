@@ -13,7 +13,7 @@ let locations = try await api.searchLocations(query: query)
 print(locations)
 ```
 
-```json
+```shell
 [
     Location(
         id: 13331376, 
@@ -30,7 +30,7 @@ print(locations)
             addressString: "10600 N Tantau Ave, Cupertino, CA 95014-0739"
         ),
         ancestors: nil,,,
-    )
+    ),
 ]
 ```
 
