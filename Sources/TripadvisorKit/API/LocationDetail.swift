@@ -3,7 +3,7 @@ import Foundation
 
 extension TripadvisorAPI {
   public func locationDetail(
-    locationId: Location.ID,
+    id locationId: Location.ID,
     currency: Currency? = nil
   ) async throws -> Location {
     let request = LocationDetailRequest(

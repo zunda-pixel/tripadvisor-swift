@@ -41,19 +41,19 @@ final class TripadvisorKitTests: XCTestCase {
 
   func testLocationReviews() async throws {
     let locationId: Location.ID = "15654717"
-    let reviews = try await api.locationReviews(locationId: locationId)
+    let reviews = try await api.locationReviews(id: locationId)
     XCTAssertTrue(reviews.map(\.locationId).allSatisfy { $0 == Int(locationId.rawValue)! })
   }
 
   func testLocationPhotos() async throws {
     let locationId: Location.ID = "15654717"
-    let photos = try await api.locationPhotos(locationId: locationId)
+    let photos = try await api.locationPhotos(id: locationId)
     print(photos)
   }
 
   func testLocatioDetail() async throws {
     let locationId: Location.ID = "15654717"
-    let location = try await api.locationDetail(locationId: locationId)
+    let location = try await api.locationDetail(id: locationId)
     XCTAssertEqual(locationId, location.id)
   }
 }
