@@ -3,7 +3,7 @@ import XCTest
 @testable import TripadvisorKit
 
 #if canImport(FoundationNetworking)
-import FoundationNetworking
+  import FoundationNetworking
 #endif
 
 final class TripadvisorKitTests: XCTestCase {

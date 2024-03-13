@@ -2,7 +2,7 @@ import Foundation
 import Tagged
 
 #if canImport(FoundationNetworking)
-import FoundationNetworking
+  import FoundationNetworking
 #endif
 
 public struct Location: Codable, Identifiable, Sendable, Hashable {

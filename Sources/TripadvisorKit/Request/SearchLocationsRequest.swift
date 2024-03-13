@@ -2,7 +2,7 @@ import Foundation
 import HTTPTypes
 
 #if canImport(FoundationNetworking)
-import FoundationNetworking
+  import FoundationNetworking
 #endif
 
 public struct SearchLocationsRequest: Request, Sendable, Hashable {
