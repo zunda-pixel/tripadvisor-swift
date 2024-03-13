@@ -1,47 +1,47 @@
 public enum Language: String, Codable, Sendable, Hashable, CaseIterable {
-  case ar
-  case zh
-  case zh_TW
-  case da
-  case nl
-  case en_AU
-  case en_CA
-  case en_HK
-  case en_IN
-  case en_IE
-  case en_MY
-  case en_NZ
-  case en_PH
-  case en_SG
-  case en_ZA
-  case en_UK
-  case en
-  case fr
-  case fr_BE
-  case fr_CA
-  case fr_CH
-  case de_AT
-  case de
-  case el
-  case iw
-  case `in`
-  case it
-  case it_CH
-  case ja
-  case ko
-  case no
-  case pt_PT
-  case pt
-  case ru
-  case es_AR
-  case es_CO
-  case es_MX
-  case es_PE
-  case es
-  case es_VE
-  case es_CL
-  case sv
-  case th
-  case tr
-  case vi
+  case arabic = "ar"
+  case chineseSimplified = "zh"
+  case chineseTraditional = "zh_TW"
+  case danish = "da"
+  case dutch = "nl"
+  case englishAustralian = "en_AU"
+  case englishCanadian = "en_CA"
+  case englishHongkong = "en_HK"
+  case englishIndian = "en_IN"
+  case englishIrish = "en_IE"
+  case englishMalaysian = "en_MY"
+  case englishNewzealand = "en_NZ"
+  case englishPhilippine = "en_PH"
+  case englishSingapore = "en_SG"
+  case englishSouthafrican = "en_ZA"
+  case englishUk = "en_UK"
+  case english = "en"
+  case french = "fr"
+  case frenchBelgian = "fr_BE"
+  case frenchCanadian = "fr_CA"
+  case frenchSwiss = "fr_CH"
+  case germanAustrian = "de_AT"
+  case german = "de"
+  case greek = "el"
+  case hebrew = "iw"
+  case indonesian = "in"
+  case italian = "it"
+  case italianSwiss = "it_CH"
+  case japanese = "ja"
+  case korean = "ko"
+  case norwegian = "no"
+  case portuguesePortugal = "pt_PT"
+  case portuguese = "pt"
+  case russian = "ru"
+  case spanishArgentine = "es_AR"
+  case spanishColombian = "es_CO"
+  case spanishMexican = "es_MX"
+  case spanishPeruvian = "es_PE"
+  case spanish = "es"
+  case spanishVenezuelan = "es_VE"
+  case spanishChilean = "es_CL"
+  case swedish = "sv"
+  case thai = "th"
+  case turkish = "tr"
+  case vietnamese = "vi"
 }

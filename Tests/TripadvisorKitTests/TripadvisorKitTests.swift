@@ -5,7 +5,7 @@ import XCTest
 final class TripadvisorKitTests: XCTestCase {
   let api = TripadvisorAPI(
     apiKey: ProcessInfo.processInfo.environment["API_KEY"]!,
-    language: .en,
+    language: .english,
     referer: URL(string: ProcessInfo.processInfo.environment["REFERER_URL"]!)!
   )
 
