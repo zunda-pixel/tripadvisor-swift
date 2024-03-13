@@ -40,14 +40,14 @@ public struct ImageContent: Codable, Sendable, Hashable {
   public var small: ImageResource
   public var medium: ImageResource
   public var large: ImageResource
-  public var original: ImageResource
+  public var original: ImageResource?
   
   public init(
     thumbnail: ImageResource,
     small: ImageResource,
     medium: ImageResource,
     large: ImageResource,
-    original: ImageResource
+    original: ImageResource? = nil
   ) {
     self.thumbnail = thumbnail
     self.small = small
