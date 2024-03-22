@@ -13,7 +13,7 @@ final class TripadvisorKitTests: XCTestCase {
     let query = "Apple Park Visitor Center"
     let locations = try await api.searchLocations(query: query)
     let location = locations.first!
-    XCTAssertEqual(location.id, "13331376")
+    XCTAssertEqual(location.id, 13331376)
     XCTAssertEqual(location.name, "Apple Park Visitor Center")
     XCTAssertEqual(location.address?.street1, "10600 N Tantau Ave")
     XCTAssertNil(location.address?.street2)
@@ -28,7 +28,7 @@ final class TripadvisorKitTests: XCTestCase {
     let point = Location.Point(latitude: 37.334603, longitude: -122.009198)
     let locations = try await api.searchNearLocations(point: point)
     let location = locations.first!
-    XCTAssertEqual(location.id, "13331376")
+    XCTAssertEqual(location.id, 13331376)
     XCTAssertEqual(location.name, "Apple Park Visitor Center")
     XCTAssertEqual(location.address?.street1, "10600 N Tantau Ave")
     XCTAssertNil(location.address?.street2)
@@ -40,19 +40,19 @@ final class TripadvisorKitTests: XCTestCase {
   }
 
   func testLocationReviews() async throws {
-    let locationId: Location.ID = "13331376"
+    let locationId: Location.ID = 13331376
     let reviews = try await api.locationReviews(id: locationId)
-    XCTAssertTrue(reviews.map(\.locationId).allSatisfy { $0 == Int(locationId.rawValue)! })
+    XCTAssertTrue(reviews.map(\.locationId).allSatisfy { $0 == locationId.rawValue })
   }
 
   func testLocationPhotos() async throws {
-    let locationId: Location.ID = "13331376"
+    let locationId: Location.ID = 13331376
     let photos = try await api.locationPhotos(id: locationId)
     print(photos)
   }
 
   func testLocatioDetail() async throws {
-    let locationId: Location.ID = "13331376"
+    let locationId: Location.ID = 13331376
     let location = try await api.locationDetail(id: locationId)
     print(location)
     XCTAssertEqual(location.id, locationId)
@@ -71,8 +71,8 @@ final class TripadvisorKitTests: XCTestCase {
       .init(level: "State", name: "California", locationId: "28926"),
       .init(level: "Country", name: "United States", locationId: "191")
     ])
-    XCTAssertEqual(location.latitude, "37.33272")
-    XCTAssertEqual(location.longitude, "-122.00533")
+    XCTAssertEqual(location.latitude, 37.33272)
+    XCTAssertEqual(location.longitude, -122.00533)
     XCTAssertEqual(location.timezone, "America/Los_Angeles")
     XCTAssertEqual(location.phoneNumber, "+1 408-961-1560")
     XCTAssertEqual(location.website, URL(string: "http://www.apple.com/retail/appleparkvisitorcenter/")!)
