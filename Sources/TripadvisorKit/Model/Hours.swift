@@ -6,7 +6,7 @@ public struct Hours: Codable, Sendable, Hashable {
     case periods
     case weekdayText = "weekday_text"
   }
-  
+
   public init(
     periods: [Period],
     weekdayText: [String]
