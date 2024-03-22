@@ -5,7 +5,7 @@ import XCTest
 final class TripadvisorKitTests: XCTestCase {
   let api = TripadvisorAPI(
     apiKey: ProcessInfo.processInfo.environment["API_KEY"]!,
-    language: .en,
+    language: .english,
     referer: URL(string: ProcessInfo.processInfo.environment["REFERER_URL"]!)!
   )
 
@@ -107,6 +107,7 @@ final class TripadvisorKitTests: XCTestCase {
     XCTAssertEqual(
       location.ratingImageUrl,
       URL(string: "https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-66827-5.svg")!)
+    XCTAssertEqual(location.reviewCount, 239)
     XCTAssertEqual(location.reviewRatingCount, [2: 13, 5: 107, 4: 59, 3: 52, 1: 8])
     XCTAssertEqual(location.photoCount, 424)
     XCTAssertEqual(

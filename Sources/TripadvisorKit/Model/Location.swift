@@ -17,7 +17,7 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
   public var ranking: Ranking?
   public var rating: Double?
   public var ratingImageUrl: URL?
-  public var reviewCount: String?
+  public var reviewCount: Int?
   public var reviewRatingCount: [Int: Int]?
   public var photoCount: Int?
   public var seeAllPhotosURL: URL?
@@ -76,7 +76,7 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     ranking: Ranking? = nil,
     rating: Double? = nil,
     ratingImageUrl: URL? = nil,
-    reviewCount: String? = nil,
+    reviewCount: Int? = nil,
     reviewRatingCount: [Int: Int]? = nil,
     photoCount: Int? = nil,
     seeAllPhotosURL: URL? = nil,
@@ -147,7 +147,10 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     self.rating = rating.map { Double($0)! }
 
     self.ratingImageUrl = try container.decodeIfPresent(URL.self, forKey: .ratingImageUrl)
-    self.reviewCount = try container.decodeIfPresent(String.self, forKey: .reviewCount)
+
+    // TODO API should have Int but String.
+    let reviewCount = try container.decodeIfPresent(String.self, forKey: .reviewCount)
+    self.reviewCount = reviewCount.map { Int($0)! }
 
     // TODO API should have [Int: Int] but [String: String].
     let reviewRatingCount = try container.decodeIfPresent(
