@@ -40,7 +40,7 @@ public enum Language: String, Codable, Sendable, Hashable, CaseIterable {
   case spanish = "es"
   case spanishVenezuela = "es_VE"
   case spanishChile = "es_CL"
-  case Swedish = "sv"
+  case swedish = "sv"
   case thai = "th"
   case turkish = "tr"
   case vietnamese = "vi"
