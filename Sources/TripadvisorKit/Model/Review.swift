@@ -4,7 +4,7 @@ import Tagged
 public struct Review: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Review, Int>
   public var lang: Language
-  public var locationId: Int  //TODO Location.ID
+  public var locationId: Location.ID
   public var publishedDate: Date
   public var rating: Int
   public var helpfulVotes: Int
@@ -31,11 +31,11 @@ public struct Review: Codable, Identifiable, Sendable, Hashable {
     case travelDate = "travel_date"
     case user
   }
-  
+
   public init(
     id: Tagged<Review, Int>,
     lang: Language,
-    locationId: Int,
+    locationId: Location.ID,
     publishedDate: Date,
     rating: Int,
     helpfulVotes: Int,

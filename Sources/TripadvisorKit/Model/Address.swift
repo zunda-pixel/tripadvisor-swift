@@ -16,7 +16,7 @@ public struct Address: Codable, Sendable, Hashable {
     case postalCode = "postalcode"
     case addressString = "address_string"
   }
-  
+
   public init(
     street1: String,
     street2: String,

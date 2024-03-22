@@ -13,7 +13,7 @@ public struct TripadvisorAPI: Sendable, Hashable {
 
   public init(
     apiKey: String,
-    language: Language = .en,
+    language: Language = .english,
     session: URLSession = .shared,
     referer: URL? = nil,
     origin: URL? = nil

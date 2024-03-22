@@ -49,7 +49,7 @@ public struct SearchNearLocationsRequest: Request, Sendable, Hashable {
     phoneNumber: String? = nil,
     address: String? = nil,
     radius: Radius? = nil,
-    language: Language? = .en
+    language: Language? = .english
   ) {
     self.apiKey = apiKey
     self.referer = referer
