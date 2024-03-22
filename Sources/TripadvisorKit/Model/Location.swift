@@ -15,11 +15,11 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
   public var website: URL?
   public var writeReview: URL?
   public var ranking: Ranking?
-  public var rating: String?
+  public var rating: Double?
   public var ratingImageUrl: URL?
   public var reviewCount: String?
-  public var reviewRatingCount: [String: String]?
-  public var photoCount: String?
+  public var reviewRatingCount: [Int: Int]?
+  public var photoCount: Int?
   public var seeAllPhotosURL: URL?
   public var priceLevel: String?
   public var hours: Hours?
@@ -59,7 +59,7 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     case neighborhoods = "neighborhood_info"
     case tripTypes = "trip_types"
   }
-  
+
   public init(
     id: Tagged<Location, Int>,
     name: String,
@@ -74,11 +74,11 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     website: URL? = nil,
     writeReview: URL? = nil,
     ranking: Ranking? = nil,
-    rating: String? = nil,
+    rating: Double? = nil,
     ratingImageUrl: URL? = nil,
     reviewCount: String? = nil,
-    reviewRatingCount: [String : String]? = nil,
-    photoCount: String? = nil,
+    reviewRatingCount: [Int: Int]? = nil,
+    photoCount: Int? = nil,
     seeAllPhotosURL: URL? = nil,
     priceLevel: String? = nil,
     hours: Hours? = nil,
@@ -117,9 +117,10 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     self.neighborhoods = neighborhoods
     self.tripTypes = tripTypes
   }
-  
+
   public init(from decoder: any Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
+
     // TODO API should have Int but String.
     let id = try container.decode(String.self, forKey: .id)
     self.id = .init(Int(id)!)
@@ -128,20 +129,36 @@ public struct Location: Codable, Identifiable, Sendable, Hashable {
     self.webURL = try container.decodeIfPresent(URL.self, forKey: .webURL)
     self.address = try container.decodeIfPresent(Address.self, forKey: .address)
     self.ancestors = try container.decodeIfPresent([Ancestor].self, forKey: .ancestors)
+
+    // TODO API should have Double but String.
     let latitude = try container.decodeIfPresent(String.self, forKey: .latitude)
     self.latitude = latitude.map { Double($0)! }
     let longitude = try container.decodeIfPresent(String.self, forKey: .longitude)
     self.longitude = longitude.map { Double($0)! }
+
     self.timezone = try container.decodeIfPresent(String.self, forKey: .timezone)
     self.phoneNumber = try container.decodeIfPresent(String.self, forKey: .phoneNumber)
     self.website = try container.decodeIfPresent(URL.self, forKey: .website)
     self.writeReview = try container.decodeIfPresent(URL.self, forKey: .writeReview)
     self.ranking = try container.decodeIfPresent(Ranking.self, forKey: .ranking)
-    self.rating = try container.decodeIfPresent(String.self, forKey: .rating)
+
+    // TODO API should have Double but String.
+    let rating = try container.decodeIfPresent(String.self, forKey: .rating)
+    self.rating = rating.map { Double($0)! }
+
     self.ratingImageUrl = try container.decodeIfPresent(URL.self, forKey: .ratingImageUrl)
     self.reviewCount = try container.decodeIfPresent(String.self, forKey: .reviewCount)
-    self.reviewRatingCount = try container.decodeIfPresent([String : String].self, forKey: .reviewRatingCount)
-    self.photoCount = try container.decodeIfPresent(String.self, forKey: .photoCount)
+
+    // TODO API should have [Int: Int] but [String: String].
+    let reviewRatingCount = try container.decodeIfPresent(
+      [String: String].self, forKey: .reviewRatingCount)
+    let reviewRatingCountKeyValues = reviewRatingCount?.map { (Int($0.key)!, Int($0.value)!) }
+    self.reviewRatingCount = reviewRatingCountKeyValues.map { .init(uniqueKeysWithValues: $0) }
+
+    // TODO API should have Int but String.
+    let photoCount = try container.decodeIfPresent(String.self, forKey: .photoCount)
+    self.photoCount = photoCount.map { Int($0)! }
+
     self.seeAllPhotosURL = try container.decodeIfPresent(URL.self, forKey: .seeAllPhotosURL)
     self.priceLevel = try container.decodeIfPresent(String.self, forKey: .priceLevel)
     self.hours = try container.decodeIfPresent(Hours.self, forKey: .hours)
