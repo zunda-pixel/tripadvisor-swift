@@ -1,7 +1,7 @@
 import Foundation
 
 extension JSONDecoder {
-  static var tripadvisor: JSONDecoder {
+  static public var tripadvisor: JSONDecoder {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .custom { decoder in
       let formatter = ISO8601DateFormatter()
