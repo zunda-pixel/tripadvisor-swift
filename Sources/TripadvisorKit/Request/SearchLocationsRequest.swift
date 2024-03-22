@@ -52,7 +52,7 @@ public struct SearchLocationsRequest: Request, Sendable, Hashable {
     address: String? = nil,
     point: Location.Point? = nil,
     radius: Radius? = nil,
-    language: Language? = .en
+    language: Language? = .english
   ) {
     self.apiKey = apiKey
     self.searchQuery = searchQuery
