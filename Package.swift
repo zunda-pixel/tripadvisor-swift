@@ -15,7 +15,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/apple/swift-format", from: "509.0.0"),
+    .package(url: "https://github.com/apple/swift-format", from: "510.1.0"),
     .package(url: "https://github.com/apple/swift-http-types", from: "1.0.3"),
     .package(url: "https://github.com/pointfreeco/swift-tagged", from: "0.1.0"),
     .package(url: "https://github.com/zunda-pixel/swift-currency", from: "0.0.1"),
