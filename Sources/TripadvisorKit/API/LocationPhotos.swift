@@ -3,7 +3,6 @@ import Foundation
 extension TripadvisorAPI {
   public func locationPhotos(
     id locationId: Location.ID,
-    address: String? = nil,
     limit: Int? = nil,
     offset: Int? = nil,
     source: PhotoSourceFilter? = nil

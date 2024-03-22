@@ -3,7 +3,6 @@ import Foundation
 extension TripadvisorAPI {
   public func locationReviews(
     id locationId: Location.ID,
-    address: String? = nil,
     limit: Int? = nil,
     offset: Int? = nil
   ) async throws -> [Review] {
