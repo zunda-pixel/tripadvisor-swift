@@ -6,7 +6,7 @@ import HTTPTypesFoundation
   import FoundationNetworking
 
   extension URLSession {
-    public func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+    public func data(for request: URLRequest, delegate: (any URLSessionTaskDelegate)? = nil) async throws -> (Data, URLResponse) {
       return try await withCheckedThrowingContinuation { continuation in
         self.dataTask(with: request) { data, response, error in
           if let error {
@@ -18,7 +18,7 @@ import HTTPTypesFoundation
         .resume()
       }
     }
-    public func data(for request: HTTPRequest, delegate: URLSessionTaskDelegate? = nil) async throws -> (Data, HTTPResponse) {
+    public func data(for request: HTTPRequest, delegate: (any URLSessionTaskDelegate)? = nil) async throws -> (Data, HTTPResponse) {
       guard let urlRequest = URLRequest(httpRequest: request) else {
         throw HTTPTypeConversionError.failedToConvertHTTPRequestToURLRequest
       }
@@ -28,6 +28,11 @@ import HTTPTypesFoundation
       }
       return (data, response)
     }
+  }
+
+  enum HTTPTypeConversionError: Error {
+    case failedToConvertHTTPRequestToURLRequest
+    case failedToConvertURLResponseToHTTPResponse
   }
 #endif
 
