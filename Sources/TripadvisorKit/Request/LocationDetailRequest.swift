@@ -1,5 +1,9 @@
 import Currency
+#if os(Linux)
 @preconcurrency import Foundation
+#else
+import Foundation
+#endif
 import HTTPTypes
 
 public struct LocationDetailRequest: Request, Sendable, Hashable {

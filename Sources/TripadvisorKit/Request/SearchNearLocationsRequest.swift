@@ -1,4 +1,9 @@
+#if os(Linux)
 @preconcurrency import Foundation
+#else
+import Foundation
+#endif
+
 import HTTPTypes
 
 public struct SearchNearLocationsRequest: Request, Sendable, Hashable {

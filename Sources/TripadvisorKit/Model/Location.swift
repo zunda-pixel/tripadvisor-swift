@@ -1,4 +1,9 @@
+#if os(Linux)
 @preconcurrency import Foundation
+#else
+import Foundation
+#endif
+
 import Tagged
 
 public struct Location: Codable, Identifiable, Sendable, Hashable {

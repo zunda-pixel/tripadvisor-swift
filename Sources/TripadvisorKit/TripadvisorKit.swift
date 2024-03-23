@@ -1,4 +1,8 @@
+#if os(Linux)
 @preconcurrency import Foundation
+#else
+import Foundation
+#endif
 
 #if canImport(FoundationNetworking)
   @preconcurrency import FoundationNetworking

@@ -1,9 +1,9 @@
-@preconcurrency import Foundation
 import HTTPTypes
 import HTTPTypesFoundation
 
 #if canImport(FoundationNetworking)
   import FoundationNetworking
+  @preconcurrency import Foundation
 
   extension URLSession {
     public func data(for request: URLRequest, delegate: (any URLSessionTaskDelegate)? = nil) async throws -> (Data, URLResponse) {
@@ -34,6 +34,8 @@ import HTTPTypesFoundation
     case failedToConvertHTTPRequestToURLRequest
     case failedToConvertURLResponseToHTTPResponse
   }
+#else
+import Foundation
 #endif
 
 public protocol Request {

@@ -1,4 +1,9 @@
+#if os(Linux)
 @preconcurrency import Foundation
+#else
+import Foundation
+#endif
+
 
 extension JSONDecoder {
   static public var tripadvisor: JSONDecoder {
