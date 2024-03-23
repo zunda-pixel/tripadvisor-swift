@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 public struct Photo: Codable, Sendable, Hashable {
   public var id: Int

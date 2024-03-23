@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 extension TripadvisorAPI {
   /// The Location Photos request returns up to 5 high-quality photos for a specific location. Please note that the limits are different for the beta subscribers. You need to upgrade to get the higher limits mentioned here.

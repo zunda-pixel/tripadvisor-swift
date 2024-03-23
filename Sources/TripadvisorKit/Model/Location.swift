@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 import Tagged
 
 public struct Location: Codable, Identifiable, Sendable, Hashable {

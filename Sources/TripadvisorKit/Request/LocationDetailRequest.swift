@@ -1,5 +1,5 @@
 import Currency
-import Foundation
+@preconcurrency import Foundation
 import HTTPTypes
 
 public struct LocationDetailRequest: Request, Sendable, Hashable {

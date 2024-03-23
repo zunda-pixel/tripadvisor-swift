@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 extension TripadvisorAPI {
   /// Search Near Locations

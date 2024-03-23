@@ -1,5 +1,5 @@
 import Currency
-import Foundation
+@preconcurrency import Foundation
 
 extension TripadvisorAPI {
   /// A Location Details request returns comprehensive information about a location (hotel, restaurant, or an attraction) such as name, address, rating, and URLs for the listing on Tripadvisor.

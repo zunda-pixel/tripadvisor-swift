@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 extension JSONDecoder {
   static public var tripadvisor: JSONDecoder {

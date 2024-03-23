@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 public struct Image: Codable, Sendable, Hashable {
   public var thumbnail: URL

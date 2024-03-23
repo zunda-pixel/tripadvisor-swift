@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 import HTTPTypes
 
 public struct SearchNearLocationsRequest: Request, Sendable, Hashable {

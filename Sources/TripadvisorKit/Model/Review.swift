@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 import Tagged
 
 public struct Review: Codable, Identifiable, Sendable, Hashable {

@@ -1,4 +1,4 @@
-import Foundation
+@preconcurrency import Foundation
 
 public enum Constants: Sendable, Hashable {
   public static let baseURL = URL(string: "https://api.content.tripadvisor.com")!
