@@ -1,4 +1,8 @@
-import Foundation
+#if os(Linux)
+  @preconcurrency import Foundation
+#else
+  import Foundation
+#endif
 
 public struct Photo: Codable, Sendable, Hashable {
   public var id: Int

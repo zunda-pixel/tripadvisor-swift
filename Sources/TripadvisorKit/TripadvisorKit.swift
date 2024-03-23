@@ -1,7 +1,11 @@
-import Foundation
+#if os(Linux)
+  @preconcurrency import Foundation
+#else
+  import Foundation
+#endif
 
 #if canImport(FoundationNetworking)
-  import FoundationNetworking
+  @preconcurrency import FoundationNetworking
 #endif
 
 public struct TripadvisorAPI: Sendable, Hashable {

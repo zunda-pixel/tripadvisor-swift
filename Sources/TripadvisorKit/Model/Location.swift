@@ -1,5 +1,10 @@
-import Foundation
 import Tagged
+
+#if os(Linux)
+  @preconcurrency import Foundation
+#else
+  import Foundation
+#endif
 
 public struct Location: Codable, Identifiable, Sendable, Hashable {
   public var id: Tagged<Location, Int>

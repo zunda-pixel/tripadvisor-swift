@@ -1,5 +1,10 @@
-import Foundation
 import HTTPTypes
+
+#if os(Linux)
+  @preconcurrency import Foundation
+#else
+  import Foundation
+#endif
 
 public struct LocationPhotosRequest: Request, Sendable, Hashable {
   public var apiKey: String

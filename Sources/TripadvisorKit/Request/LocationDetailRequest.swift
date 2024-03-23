@@ -1,6 +1,11 @@
 import Currency
-import Foundation
 import HTTPTypes
+
+#if os(Linux)
+  @preconcurrency import Foundation
+#else
+  import Foundation
+#endif
 
 public struct LocationDetailRequest: Request, Sendable, Hashable {
   public var apiKey: String
