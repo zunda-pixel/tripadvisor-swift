@@ -1,7 +1,7 @@
 @preconcurrency import Foundation
 
 #if canImport(FoundationNetworking)
-  import FoundationNetworking
+  @preconcurrency import FoundationNetworking
 #endif
 
 public struct TripadvisorAPI: Sendable, Hashable {

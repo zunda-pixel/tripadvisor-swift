@@ -1,4 +1,4 @@
-@preconcurrency import Foundation
+import Foundation
 
 extension TripadvisorAPI {
   /// The Location Reviews request returns up to 5 of the most recent reviews for a specific location. Please note that the limits are different for the beta subscribers. You need to upgrade to get the higher limits mentioned here.
