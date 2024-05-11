@@ -12,7 +12,7 @@ public struct Photo: Codable, Sendable, Hashable {
   public var image: ImageContent
   public var album: String
   public var source: LabelContent
-  public var user: User
+  public var user: User?
 
   private enum CodingKeys: String, CodingKey {
     case id
@@ -33,7 +33,7 @@ public struct Photo: Codable, Sendable, Hashable {
     image: ImageContent,
     album: String,
     source: LabelContent,
-    user: User
+    user: User?
   ) {
     self.id = id
     self.isBlessed = isBlessed
