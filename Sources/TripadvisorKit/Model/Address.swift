@@ -1,7 +1,7 @@
 public struct Address: Codable, Sendable, Hashable {
   public var street1: String?
   public var street2: String?
-  public var city: String
+  public var city: String?
   public var state: String?
   public var country: String
   public var postalCode: String?
@@ -18,9 +18,9 @@ public struct Address: Codable, Sendable, Hashable {
   }
 
   public init(
-    street1: String,
-    street2: String,
-    city: String,
+    street1: String? = nil,
+    street2: String? = nil,
+    city: String? = nil,
     state: String? = nil,
     country: String,
     postalCode: String? = nil,
