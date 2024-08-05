@@ -18,9 +18,21 @@ extension JSONDecoder {
           return date
         } else {
           let formatter = DateFormatter()
+          #if os(Linux) || os(Windows)
+          // TODO https://github.com/apple/swift-corelibs-foundation/issues/5051
+          formatter.dateFormat = "yyyy-MM-dd"
+          #else
           formatter.dateStyle = .short
           formatter.timeStyle = .none
-          return formatter.date(from: string)!
+          #endif
+          if let data = formatter.date(from: string) {
+            return data
+          } else {
+            throw DecodingError.dataCorrupted(.init(
+              codingPath: [],
+              debugDescription: "\(string) doesn't match any of the supported formats.")
+            )
+          }
         }
       }
     }
