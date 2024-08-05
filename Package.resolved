@@ -1,24 +1,6 @@
 {
-  "originHash" : "76399c1334ae35938bbf88e0269a962470996d02287285ef674b219ea7dbd310",
+  "originHash" : "b9725aaa1901386f1ef4d5d6905405e48e2fe6b1d65fddbfd4ac84e973b4606b",
   "pins" : [
-    {
-      "identity" : "swift-argument-parser",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-argument-parser.git",
-      "state" : {
-        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
-        "version" : "1.5.0"
-      }
-    },
-    {
-      "identity" : "swift-cmark",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-cmark.git",
-      "state" : {
-        "revision" : "3bc2f3e25df0cecc5dc269f7ccae65d0f386f06a",
-        "version" : "0.4.0"
-      }
-    },
     {
       "identity" : "swift-currency",
       "kind" : "remoteSourceControl",
@@ -26,15 +8,6 @@
       "state" : {
         "revision" : "476562c17ec5ed2d96794f13a24df86eb7bf96b5",
         "version" : "0.0.1"
-      }
-    },
-    {
-      "identity" : "swift-format",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-format",
-      "state" : {
-        "revision" : "7996ac678197d293f6c088a1e74bb778b4e10139",
-        "version" : "510.1.0"
       }
     },
     {
@@ -47,21 +20,12 @@
       }
     },
     {
-      "identity" : "swift-markdown",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-markdown.git",
-      "state" : {
-        "revision" : "4aae40bf6fff5286e0e1672329d17824ce16e081",
-        "version" : "0.4.0"
-      }
-    },
-    {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-syntax.git",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
       "state" : {
-        "revision" : "303e5c5c36d6a558407d364878df131c3546fad8",
-        "version" : "510.0.2"
+        "revision" : "06b5cdc432e93b60e3bdf53aff2857c6b312991a",
+        "version" : "600.0.0-prerelease-2024-07-30"
       }
     },
     {
@@ -71,6 +35,15 @@
       "state" : {
         "revision" : "3907a9438f5b57d317001dc99f3f11b46882272b",
         "version" : "0.10.0"
+      }
+    },
+    {
+      "identity" : "swift-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-testing",
+      "state" : {
+        "revision" : "6155e83dbaa2696d13bcd0079665b6a6daaf6dc8",
+        "version" : "0.11.0"
       }
     }
   ],

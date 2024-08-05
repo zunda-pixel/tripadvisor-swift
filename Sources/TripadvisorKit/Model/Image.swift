@@ -7,14 +7,14 @@
 public struct Image: Codable, Sendable, Hashable {
   public var thumbnail: URL
   public var small: URL
-  public var medium: URL
-  public var large: URL
+  public var medium: URL?
+  public var large: URL?
 
   public init(
     thumbnail: URL,
     small: URL,
-    medium: URL,
-    large: URL
+    medium: URL? = nil,
+    large: URL? = nil
   ) {
     self.thumbnail = thumbnail
     self.small = small

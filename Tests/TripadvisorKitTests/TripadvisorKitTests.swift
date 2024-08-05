@@ -27,7 +27,7 @@ func searchLocation() async throws {
 
 @Test
 func searchNearLocation() async throws {
-  let point = Location.Point(latitude: 37.334603, longitude: -122.009198)
+  let point = Location.Point(latitude: 37.3327799255124, longitude: -122.0053672856373)
   let locations = try await api.searchNearLocations(point: point)
   let location = locations.first!
   #expect(location.id == 13_331_376)
@@ -99,19 +99,19 @@ func locatioDetail() async throws {
     location.ranking ==
     .init(
       geoLocationId: 32273,
-      rankingString: "#3 of 30 things to do in Cupertino",
+      rankingString: "#1 of 7 Shopping in Cupertino",
       geoLocationName: "Cupertino",
-      rankingOutOf: 30,
-      ranking: 3
+      rankingOutOf: 7,
+      ranking: 1
     )
   )
   #expect(location.rating == 4.0)
   #expect(
     location.ratingImageUrl ==
     URL(string: "https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-66827-5.svg")!)
-  #expect(location.reviewCount == 239)
-  #expect(location.reviewRatingCount == [2: 13, 5: 107, 4: 59, 3: 52, 1: 8])
-  #expect(location.photoCount == 424)
+  #expect(location.reviewCount == 247)
+  #expect(location.reviewRatingCount ==  [1: 9, 5: 108, 2: 16, 4: 60, 3: 54])
+  #expect(location.photoCount == 427)
   #expect(
     location.seeAllPhotosURL ==
     URL(
@@ -119,24 +119,42 @@ func locatioDetail() async throws {
         "https://www.tripadvisor.com/Attraction_Review-g32273-d13331376-m66827-Reviews-Apple_Park_Visitor_Center-Cupertino_California.html#photos"
     )!)
   #expect(location.priceLevel == nil)
-  #expect(location.hours == nil)
+  #expect(location.hours == Hours(
+    periods: [
+      Period(open: .init(day: 1, time: "1000"), close: .init(day: 1, time: "1900")),
+      Period(open: .init(day: 2, time: "1000"), close: .init(day: 2, time: "1900")),
+      Period(open: .init(day: 3, time: "1000"), close: .init(day: 3, time: "1900")),
+      Period(open: .init(day: 4, time: "1000"), close: .init(day: 4, time: "1900")),
+      Period(open: .init(day: 5, time: "1000"), close: .init(day: 5, time: "1900")),
+      Period(open: .init(day: 6, time: "1000"), close: .init(day: 6, time: "1900")),
+      Period(open: .init(day: 7, time: "1000"), close: .init(day: 7, time: "1800"))
+    ],
+    weekdayText: [
+      "Monday: 10:00 - 19:00",
+      "Tuesday: 10:00 - 19:00",
+      "Wednesday: 10:00 - 19:00",
+      "Thursday: 10:00 - 19:00",
+      "Friday: 10:00 - 19:00",
+      "Saturday: 10:00 - 19:00",
+      "Sunday: 10:00 - 18:00"
+    ])
+  )
   #expect(location.features == nil)
   #expect(location.cuisines == nil)
   #expect(location.category == .init(name: "attraction", localizedName: "Attraction", value: nil))
   #expect(
     location.subCategories ==
     [
-      .init(name: "landmarks", localizedName: "Sights & Landmarks", value: nil),
-      .init(name: "attractions", localizedName: "Attractions", value: nil),
+      .init(name: "shopping", localizedName: "Shopping", value: nil),
     ])
   #expect(location.neighborhoods == [])
   #expect(
     location.tripTypes ==
     [
       .init(name: "business", localizedName: "Business", value: "18"),
-      .init(name: "couples", localizedName: "Couples", value: "52"),
-      .init(name: "solo", localizedName: "Solo travel", value: "35"),
-      .init(name: "family", localizedName: "Family", value: "53"),
-      .init(name: "friends", localizedName: "Friends getaway", value: "30"),
+      .init(name: "couples", localizedName: "Couples", value: "55"),
+      .init(name: "solo", localizedName: "Solo travel", value: "36"),
+      .init(name: "family", localizedName: "Family", value: "55"),
+      .init(name: "friends", localizedName: "Friends getaway", value: "32"),
     ])
 }
