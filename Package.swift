@@ -28,6 +28,14 @@ let package = Package(
         .product(name: "HTTPTypesFoundation", package: "swift-http-types"),
         .product(name: "Tagged", package: "swift-tagged"),
         .product(name: "Currency", package: "swift-currency"),
+        .target(name: "HTTPClient"),
+      ]
+    ),
+    .target(
+      name: "HTTPClient",
+      dependencies: [
+        .product(name: "HTTPTypes", package: "swift-http-types"),
+        .product(name: "HTTPTypesFoundation", package: "swift-http-types"),
       ]
     ),
     .testTarget(
