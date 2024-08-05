@@ -20,7 +20,14 @@ extension JSONDecoder {
           let formatter = DateFormatter()
           formatter.dateStyle = .short
           formatter.timeStyle = .none
-          return formatter.date(from: string)!
+          if let data = formatter.date(from: string) {
+            return data
+          } else {
+            throw DecodingError.dataCorrupted(.init(
+              codingPath: [],
+              debugDescription: "\(string) doesn't match any of the supported formats.")
+            )
+          }
         }
       }
     }
