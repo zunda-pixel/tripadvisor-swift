@@ -21,7 +21,7 @@ extension TripadvisorAPI {
       currency: currency
     )
 
-    let (data, _) = try await session.data(for: request)
+    let (data, _) = try await httpClient.execute(for: request)
 
     let location = try JSONDecoder.tripadvisor.decode(Location.self, from: data)
 
