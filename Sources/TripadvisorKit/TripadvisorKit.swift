@@ -1,16 +1,11 @@
-#if os(Linux)
-  @preconcurrency import Foundation
-#else
-  import Foundation
-#endif
+import Foundation
+import HTTPClient
 
 #if canImport(FoundationNetworking)
   @preconcurrency import FoundationNetworking
 #endif
 
-import HTTPClient
-
-public struct TripadvisorAPI<HTTPClient: HTTPClientProtocol>: Sendable, Hashable {
+public struct TripadvisorAPI<HTTPClient: HTTPClientProtocol>: Sendable, Hashable where HTTPClient.Data == Foundation.Data, HTTPClient.Body == Foundation.Data, HTTPClient: Hashable {
   public var apiKey: String
   public var language: Language
   public var httpClient: HTTPClient
