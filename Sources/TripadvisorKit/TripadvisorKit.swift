@@ -5,7 +5,7 @@ import HTTPClient
   @preconcurrency import FoundationNetworking
 #endif
 
-public struct TripadvisorAPI<HTTPClient: HTTPClientProtocol>: Sendable, Hashable where HTTPClient.Data == Foundation.Data, HTTPClient.Body == Foundation.Data, HTTPClient: Hashable {
+public struct TripadvisorAPI<HTTPClient: HTTPClientProtocol & Sendable>: Sendable {
   public var apiKey: String
   public var language: Language
   public var httpClient: HTTPClient
