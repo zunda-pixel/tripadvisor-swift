@@ -37,7 +37,6 @@ let package = Package(
       dependencies: [
         .target(name: "TripadvisorKit"),
         .product(name: "Testing", package: "swift-testing"),
-        .product(name: "HTTPClientFoundation", package: "http-client"),
       ]
     ),
   ]

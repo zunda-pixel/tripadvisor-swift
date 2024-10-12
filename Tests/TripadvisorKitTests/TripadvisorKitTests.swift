@@ -1,7 +1,6 @@
 import Foundation
 import Testing
 import TripadvisorKit
-import HTTPClientFoundation
 
 let api = TripadvisorAPI(
   apiKey: ProcessInfo.processInfo.environment["API_KEY"]!,
