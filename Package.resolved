@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/zunda-pixel/http-client",
       "state" : {
-        "revision" : "a3213b123b41b3a3c4c5d897c74d0b45b3e9dcda",
-        "version" : "0.1.3"
+        "revision" : "88acdc5c925661d7a53017dfc9cccae6554b02a0",
+        "version" : "0.3.0"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-syntax.git",
       "state" : {
-        "revision" : "06b5cdc432e93b60e3bdf53aff2857c6b312991a",
-        "version" : "600.0.0-prerelease-2024-07-30"
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swiftlang/swift-testing",
       "state" : {
-        "revision" : "6155e83dbaa2696d13bcd0079665b6a6daaf6dc8",
-        "version" : "0.11.0"
+        "revision" : "399f76dcd91e4c688ca2301fa24a8cc6d9927211",
+        "version" : "0.99.0"
       }
     }
   ],
