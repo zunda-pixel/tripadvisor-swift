@@ -5,7 +5,7 @@ on: pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: swift:latest
+    container: swiftlang/swift:nightly-main-jammy
     steps:
     - uses: actions/checkout@v4
     - run: swift build --build-tests
