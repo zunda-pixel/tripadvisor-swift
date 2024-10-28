@@ -106,8 +106,8 @@ func locatioDetail() async throws {
   #expect(
     location.ratingImageUrl == URL(
       string: "https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.0-66827-5.svg")!)
-  #expect(location.reviewCount == 252)
-  #expect(location.reviewRatingCount == [1: 12, 3: 55, 4: 60, 5: 108, 2: 17])
+  #expect(location.reviewCount == 253)
+  #expect(location.reviewRatingCount == [3: 55, 1: 12, 5: 109, 4: 60, 2: 17])
   #expect(location.photoCount == 432)
   #expect(
     location.seeAllPhotosURL == URL(
@@ -147,10 +147,11 @@ func locatioDetail() async throws {
   #expect(location.neighborhoods == [])
   #expect(
     location.tripTypes == [
-      .init(name: "business", localizedName: "Business", value: "18"),
-      .init(name: "couples", localizedName: "Couples", value: "57"),
-      .init(name: "solo", localizedName: "Solo travel", value: "37"),
-      .init(name: "family", localizedName: "Family", value: "56"),
-      .init(name: "friends", localizedName: "Friends getaway", value: "33"),
-    ])
+      LabelContent(name: "business", localizedName: "Business", value: Optional("18")),
+      LabelContent(name: "couples", localizedName: "Couples", value: Optional("57")),
+      LabelContent(name: "solo", localizedName: "Solo travel", value: Optional("38")),
+      LabelContent(name: "family", localizedName: "Family", value: Optional("56")),
+      LabelContent(name: "friends", localizedName: "Friends getaway", value: Optional("33")),
+    ]
+  )
 }
