@@ -34,7 +34,7 @@ let package = Package(
     .testTarget(
       name: "TripadvisorKitTests",
       dependencies: [
-        .target(name: "TripadvisorKit"),
+        .target(name: "TripadvisorKit")
       ]
     ),
   ]

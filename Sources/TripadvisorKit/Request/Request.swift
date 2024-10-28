@@ -1,3 +1,4 @@
+import HTTPClient
 import HTTPTypes
 import HTTPTypesFoundation
 
@@ -25,8 +26,6 @@ extension Request {
     return components.url!
   }
 }
-
-import HTTPClient
 
 extension HTTPClientProtocol {
   public func execute(for request: some Request) async throws -> (Data, HTTPResponse) {
