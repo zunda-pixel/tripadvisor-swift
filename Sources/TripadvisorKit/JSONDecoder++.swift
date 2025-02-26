@@ -12,7 +12,10 @@ extension JSONDecoder {
       if let date = try? Date(string, strategy: .iso8601) {
         return date
       } else {
-        if let date = try? Date(string, strategy: .iso8601.year().month().day().time(includingFractionalSeconds: true)) {
+        if let date = try? Date(
+          string,
+          strategy: .iso8601.year().month().day().time(includingFractionalSeconds: true)
+        ) {
           return date
         } else {
           if let data = try? Date(string, strategy: .iso8601.year().month().day()) {
