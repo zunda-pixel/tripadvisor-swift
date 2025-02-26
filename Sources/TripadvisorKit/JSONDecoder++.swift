@@ -8,23 +8,22 @@ extension JSONDecoder {
   static public var tripadvisor: JSONDecoder {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .custom { decoder in
-      let formatter = ISO8601DateFormatter()
       let string = try decoder.singleValueContainer().decode(String.self)
-      if let date = formatter.date(from: string) {
+      if let date = try? Date(string, strategy: .iso8601) {
         return date
       } else {
-        formatter.formatOptions.insert(.withFractionalSeconds)
-        if let date = formatter.date(from: string) {
+        if let date = try? Date(
+          string,
+          strategy: .iso8601.year().month().day().time(includingFractionalSeconds: true)
+        ) {
           return date
         } else {
-          let formatter = DateFormatter()
-          formatter.dateFormat = "yyyy-MM-dd"
-          if let data = formatter.date(from: string) {
+          if let data = try? Date(string, strategy: .iso8601.year().month().day()) {
             return data
           } else {
             throw DecodingError.dataCorrupted(
               .init(
-                codingPath: [],
+                codingPath: decoder.codingPath,
                 debugDescription: "\(string) doesn't match any of the supported formats."
               )
             )
