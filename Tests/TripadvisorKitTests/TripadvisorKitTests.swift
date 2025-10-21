@@ -2,6 +2,10 @@ import Foundation
 import Testing
 import TripadvisorKit
 
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
+
 @Suite
 struct TripadvisorKitTests {
   var api: TripadvisorAPI<URLSession>
